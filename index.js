@@ -17,6 +17,12 @@ db.once('open', () => console.log('Database connected'));
 
 app.use(cors({ origin: '*' }));
 
+// added a middleware,with the use of this
+//the coming data inside body of request gets
+//parsed automatically.
+app.use(express.json());
+app.use(express.urlencoded());
+
 const userIpRouter = require('./routes/userIp');
 app.use('/user', userIpRouter);
 
