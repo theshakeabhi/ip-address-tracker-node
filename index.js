@@ -4,8 +4,6 @@ const cors = require('cors');
 const express = require('express');
 const app = express();
 
-const PORT = process.env.PORT || 3000;
-
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE_URL, {
 	useNewUrlParser: true,
@@ -22,4 +20,4 @@ app.use(cors({ origin: '*' }));
 const userIpRouter = require('./routes/userIp');
 app.use('/userip', userIpRouter);
 
-app.listen(PORT, () => console.log('Server Started'));
+app.listen(process.env.PORT || 3000, () => console.log('Server Started'));
