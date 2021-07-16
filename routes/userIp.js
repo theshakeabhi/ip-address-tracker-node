@@ -12,7 +12,15 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/userip', async (req, res) => {
-	const userIp = new UserIp({ userId: req.body.userId, ipAddress: req.body.ip });
+	const userIp = new UserIp({
+		userId: req.body.userId,
+		name: req.body.name ? req.body.name : '',
+		ipAddress: req.body.ip,
+		country: req.body.country,
+		region: req.body.region,
+		timezone: req.body.timezone,
+		isp: req.body.isp,
+	});
 	try {
 		const newUserIp = await userIp.save();
 		res.status(200).json(newUserIp);

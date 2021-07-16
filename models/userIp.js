@@ -9,6 +9,25 @@ const userIpSchema = new mongoose.Schema({
 		type: String,
 		require: true,
 	},
+	country: {
+		type: String,
+		require: true,
+	},
+	region: {
+		type: String,
+		require: true,
+	},
+	timezone: {
+		type: String,
+		require: true,
+	},
+	isp: {
+		type: String,
+		require: true,
+	},
+	name: {
+		type: String,
+	},
 });
 
 module.exports = mongoose.model('UserIp', userIpSchema);
