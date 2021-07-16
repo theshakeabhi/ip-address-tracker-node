@@ -18,6 +18,6 @@ db.once('open', () => console.log('Database connected'));
 app.use(cors({ origin: '*' }));
 
 const userIpRouter = require('./routes/userIp');
-app.use('/userip', userIpRouter);
+app.use('/user', userIpRouter);
 
 app.listen(process.env.PORT || 3000, () => console.log('Server Started'));
